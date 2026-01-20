@@ -1,0 +1,10 @@
+body{font-family:Arial;margin:0}
+.topbar{display:flex;align-items:center;gap:10px;padding:10px;background:#f5f5f5}
+.logo-top{height:40px}
+.doc{padding:20mm}
+.a4.landscape{width:297mm;height:210mm}
+.hidden{display:none}
+.editable{min-height:120mm}
+@media print{
+.no-print{display:none}
+}

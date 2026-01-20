@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>SannoMed – Sistema Clínico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar no-print">
+  <img src="logo-sannomed.png" class="logo-top">
+  <button onclick="selecionar('receita')">Receita</button>
+  <button onclick="selecionar('tipoC')">Tipo C</button>
+  <button onclick="selecionar('exames')">Exames</button>
+  <button onclick="selecionar('atestado')">Atestado</button>
+  <button onclick="window.print()">Imprimir</button>
+</header>
+
+<div id="receita" class="doc a4 landscape">
+  <h1>RECEITUÁRIO</h1>
+  <div contenteditable="true" class="editable">(Prescrição)</div>
+</div>
+
+<div id="tipoC" class="doc a4 landscape hidden">
+  <h1>RECEITA MÉDICA – TIPO C</h1>
+  <div contenteditable="true" class="editable">(Prescrição)</div>
+  <div class="box">IDENTIFICAÇÃO DO COMPRADOR / FORNECEDOR</div>
+</div>
+
+<div id="exames" class="doc a4 landscape hidden">
+  <h1>SOLICITAÇÃO DE EXAMES</h1>
+  <p contenteditable="true">Paciente adulto, dieta irregular, sedentarismo, baixa exposição solar, queixa de cansaço.</p>
+  <div contenteditable="true" class="editable">(Exames selecionados)</div>
+</div>
+
+<div id="atestado" class="doc a4 landscape hidden">
+  <h1>ATESTADO MÉDICO</h1>
+  <p contenteditable="true">
+Atesto para os devidos fins, a pedido, que o paciente supracitado esteve presente em unidade básica para atendimento
+e consulta médica no período MATUTINO, da data de hoje __/__/____, em que ausentou-se de suas atividades laborais.
+  </p>
+</div>
+
+<script>
+function selecionar(id){
+  document.querySelectorAll('.doc').forEach(d=>d.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
